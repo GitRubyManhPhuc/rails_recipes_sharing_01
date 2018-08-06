@@ -45,7 +45,7 @@ GEM
       tzinfo (~> 1.1)
     arel (9.0.0)
     ast (2.4.0)
-    autoprefixer-rails (9.0.0)
+    autoprefixer-rails (9.1.0)
       execjs
     bcrypt (3.1.12)
     bindex (0.5.0)
@@ -278,6 +278,8 @@ GEM
       concurrent-ruby (~> 1.0)
     i18n-js (3.0.11)
       i18n (>= 0.6.6, < 2)
+    impressionist (1.6.1)
+      nokogiri (~> 1)
     inflecto (0.0.2)
     ipaddress (0.8.3)
     jbuilder (2.7.0)
@@ -420,7 +422,7 @@ GEM
     turbolinks-source (5.1.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    uglifier (4.1.16)
+    uglifier (4.1.17)
       execjs (>= 0.3.0, < 3)
     unf (0.1.4)
       unf_ext
@@ -452,6 +454,7 @@ DEPENDENCIES
   fog (= 1.42)
   font-awesome-rails
   i18n-js
+  impressionist
   jbuilder (~> 2.5)
   jquery-rails
   kaminari

@@ -5,6 +5,7 @@ class Recipe < ApplicationRecord
   has_many :category, through: :category_recipes
   has_many :comments, dependent: :destroy
   belongs_to :user
+  is_impressionable
 
   mount_uploader :cover_photo, CoverPhotoUploader
 

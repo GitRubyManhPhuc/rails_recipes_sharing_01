@@ -1,13 +1,15 @@
 <div class="col-md-<%= divide %>">
   <div class="well recipe-thumbnail">
-    <%= image_tag(recipe.cover_photo.to_s,
-    class: "img-rounded center-block recipe-thumb-img", size: "240x240") %>
+    <%= link_to image_tag(recipe.cover_photo.to_s,class: "img-rounded
+      center-block recipe-thumb-img", size: "240x240"), recipe_path(
+        recipe) %>
     <div class="text-center recipe-info">
       <br>
       <ul class="list-inline">
         <li><i class="fa fa-bolt grey-text"></i> <%= recipe.difficult_level %></li>
         <li><i class="fa fa-clock-o grey-text"></i> <%= recipe.ready_in %> <%= t ".hour" %></li>
-        <li><i class="fa fa-eye grey-text"></i> ?</li>
+        <li><i class="fa fa-eye grey-text"></i> <%= recipe.
+          impressionist_count %></li>
       </ul>
 
       <%= link_to recipe.name, recipe_path(recipe), class: "recipe-thumb-name" %>

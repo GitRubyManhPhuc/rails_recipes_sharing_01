@@ -3,16 +3,19 @@
     <div class="col-md-2">
       <div class="sidebar-nav-fixed affix user-info">
         <div class="well center-block text-center">
-            <%= image_tag @user.avatar.url.to_s,
-              class: "img-responsive img-circle center-block" %>
+            <%= link_to image_tag(@user.avatar.url.to_s,
+              class: "img-responsive img-circle center-block", size: "250x150"), user_path(@user) %>
             <p><b><%= @user.name %></b></p>
             <p><%= @user.recipes.count %> <%= t ".recipe" %></p>
             <p><%= @user.followers.count %> <%= t ".follower" %></p>
-            <div><button class="btn btn-sm"><%= t ".follow" %></button></div>
-            <br>
-            <div><%= render "favors/like_form", recipe: @recipe, favor: @favor %></div>
-            <br>
-            <%= render "bookmarks/bookmark_form", recipe: @recipe, bookmark: @bookmark %>
+            <% if logged_in? and !current_user?(@user) %>
+              <%= render "users/follow_form", user: @user %>
+              <br>
+              <div><%= render "favors/like_form", recipe: @recipe, favor: @favor %></div>
+              <br>
+              <%= render "bookmarks/bookmark_form", recipe: @recipe,
+                bookmark: @bookmark %>
+            <% end %>
         </div>
       </div>
      </div>
